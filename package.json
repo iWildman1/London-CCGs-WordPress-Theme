@@ -1,0 +1,29 @@
+{
+  "name": "london_ccgs",
+  "version": "1.0.0",
+  "description": "WordPress Theme for London CCGs",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iWildman1/London-CCGs-WordPress-Theme.git"
+  },
+  "author": "Daniel Wildman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iWildman1/London-CCGs-WordPress-Theme/issues"
+  },
+  "homepage": "https://github.com/iWildman1/London-CCGs-WordPress-Theme#readme"
+}
