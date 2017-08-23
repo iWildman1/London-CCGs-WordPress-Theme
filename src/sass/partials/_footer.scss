@@ -1,0 +1,67 @@
+footer {
+  border-top: 4px solid $nhs_main;
+
+  .footer-banner {
+    width: 100%;
+    height: 300px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .footer-info {
+    background-color: $grey_bg;
+    padding-top: 1.5rem;
+
+    .footer-nav {
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        a {
+          color: white;
+          font-size: 0.9rem;
+        }
+        padding-bottom: 0.4rem;
+      }
+    }
+
+    .social-icons {
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.3rem;
+
+        &.fb-icon {
+          background-color: $fb_main;
+        }
+
+        &.twitter-icon {
+          background-color: $twitter_main;
+          padding: 0.5rem 0.8rem;
+        }
+
+        &.rss-icon {
+          background-color: $rss_main;
+          padding: 0.5rem 0.85rem;
+        }
+
+        a {
+          color: white;
+
+          i {
+            font-size: 1.1rem;
+          }
+
+          &:hover {
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

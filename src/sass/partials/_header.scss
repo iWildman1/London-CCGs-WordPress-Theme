@@ -1,0 +1,74 @@
+header {
+  .upper-header {
+    margin: 2rem;
+
+    .upper-header-container {
+      display: flex;
+      justify-content: space-between;
+
+      .pull-left {
+        align-self: flex-start;
+      }
+
+      .pull-right {
+        align-self: flex-end;
+      }
+
+      .header-search {
+        input[type='text'] {
+          position: relative;
+          border: 0;
+          background-color: $mid_grey_bg;
+          border-radius: 0;
+          width: 250px;
+        }
+        button[type='submit'] {
+          position: absolute;
+          bottom: 0;
+          right: 15px;
+          border: 0;
+          padding: 0.33rem 0.8rem;
+          background-color: $nhs_main;
+          color: white;
+
+          i {
+            -webkit-text-stroke: 0.5px $nhs_main;
+          }
+        }
+      }
+    }
+  }
+
+  nav {
+    background-color: $mid_light_bg;
+    border-bottom: 4px solid $nhs_main;
+
+    li {
+      padding: 0.8rem 1rem;
+      &:hover, &.active {
+        background-color: $nhs_main;
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+
+      a {
+        color: $nhs_main;
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+
+    }
+
+    .navigation-items {
+      list-style: none;
+      margin-bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 0;
+
+
+    }
+  }
+}
