@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col-12 upper-header-container">
                         <div class="pull-left">
-                            <img src="<?php bloginfo('stylesheet_directory') ?>/img/logo.png" alt="">
+                            <img src="<?php bloginfo('stylesheet_directory') ?>/img/Logo.png" alt="">
                         </div>
                         <div class="pull-right">
                             <form action="#" class="header-search">

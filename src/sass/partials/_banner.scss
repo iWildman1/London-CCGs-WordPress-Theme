@@ -1,0 +1,32 @@
+.banner {
+  position: relative;
+  width: 100%;
+  height: 750px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-bottom: 14px solid $nhs_main;
+
+  .banner-controls {
+    position: absolute;
+    bottom: 2rem;
+    right: 5rem;
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      border: 1px solid $nhs_main;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      margin: 0px 0.2rem;
+      cursor: pointer;
+
+      &.active {
+        background-color: $nhs_main;
+        border: none;
+      }
+    }
+  }
+}

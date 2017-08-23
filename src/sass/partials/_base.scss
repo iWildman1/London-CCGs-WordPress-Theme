@@ -3,3 +3,24 @@ html {
   font-family: $nhs_font;
   -webkit-font-smoothing: antialiased;
 }
+
+h1, h2 {
+  color: $nhs_main;
+}
+
+h3, h4, h5, h6 {
+  color: $text_dark;
+  padding-bottom: 1rem;
+  border-bottom: 4px solid $nhs_main;
+}
+
+.news-item-col {
+  h5 {
+    color: $nhs_main;
+    border: none;
+  }
+}
+
+section {
+  padding: 4rem 0;
+}
