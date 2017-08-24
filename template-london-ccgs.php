@@ -82,21 +82,13 @@ get_header();
                 </table>
             </div>
             <div class="col-md-4 sidebar transforming-sidebar">
-                <button class="btn sidebar-nav-button">Commissioning for local populations</button>
-                <button class="btn sidebar-nav-button sidebar-active">Devolution</button>
-                <button class="btn sidebar-nav-button has-sub-menu">Sustainability transformation plans</button>
-                <div class="sidebar-sub-menu">
-                    <button class="btn sidebar-nav-button sidebar-sub-btn">Transformation STP Plan 1</button>
-                    <button class="btn sidebar-nav-button sidebar-sub-btn">Transformation STP Plan 2</button>
-                    <button class="btn sidebar-nav-button sidebar-sub-btn">Transformation STP Plan 3</button>
-                    <button class="btn sidebar-nav-button sidebar-sub-btn">Transformation STP Plan 4</button>
-                    <button class="btn sidebar-nav-button sidebar-sub-btn">Transformation STP Plan 5</button>
-                </div>
+                <button class="btn sidebar-nav-button sidebar-active">What is clinical commissioning?</button>
+                <button class="btn sidebar-nav-button">Plans and programmes</button>
 
                 <h4>Downloads</h4>
-                <button class="btn sidebar-nav-button btn-download"><i class="fa fa-download" aria-hidden="true"></i> Health Devolution FAQs</button>
-                <button class="btn sidebar-nav-button btn-download"><i class="fa fa-download" aria-hidden="true"></i> London Health and Care collaboration agreement</button>
-                <button class="btn sidebar-nav-button btn-download"><i class="fa fa-download" aria-hidden="true"></i> NHS England Devolution FAQs</button>
+                <button class="btn sidebar-nav-button btn-download"><i class="fa fa-download" aria-hidden="true"></i> Download 1</button>
+                <button class="btn sidebar-nav-button btn-download"><i class="fa fa-download" aria-hidden="true"></i> Download 2</button>
+                <button class="btn sidebar-nav-button btn-download"><i class="fa fa-download" aria-hidden="true"></i> Download 3</button>
 
                 <hr>
 

@@ -1,4 +1,4 @@
-html {
+html, body {
   font-size: 16px;
   font-family: $nhs_font;
   -webkit-font-smoothing: antialiased;
@@ -16,6 +16,7 @@ h3, h4, h5, h6 {
   color: $text_dark;
   padding-bottom: 1rem;
   border-bottom: 4px solid $nhs_main;
+  font-weight: 600;
 }
 
 .news-item-col {
@@ -59,7 +60,7 @@ section {
 
   table {
     td {
-      font-weight: 500;
+      font-weight: 600;
     }
   }
 
