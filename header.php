@@ -82,6 +82,20 @@
                             </li>
                             <li class="nav-item">
                                 <a href="#">About Us</a>
+                                <ul class="sub-menu">
+                                    <li class="sub-menu-item">
+                                        <a href="#">The Office of London CCGs</a>
+                                    </li>
+                                    <li class="sub-menu-item">
+                                        <a href="#">Who we are</a>
+                                    </li>
+                                    <li class="sub-menu-item">
+                                        <a href="#">How we work</a>
+                                    </li>
+                                    <li class="sub-menu-item">
+                                        <a href="#">Healthy London Partnership</a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="nav-item">
                                 <a href="#">News & Events</a>
