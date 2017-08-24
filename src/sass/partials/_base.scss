@@ -44,8 +44,23 @@ section {
   h4 {
     border: none;
     color: $nhs_main;
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
     padding-bottom: 0;
+  }
+
+  blockquote {
+    margin-top: 1.5rem;
+    border-color: $nhs_main;
+    color: $nhs_main;
+    font-style: italic;
+    font-size: 1rem;
+  }
+
+  table {
+    td {
+      font-weight: 500;
+    }
   }
 
   a {
