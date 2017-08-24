@@ -8,6 +8,10 @@ h1, h2 {
   color: $nhs_main;
 }
 
+h2.heading-large {
+  font-size: 2.5rem;
+}
+
 h3, h4, h5, h6 {
   color: $text_dark;
   padding-bottom: 1rem;
@@ -23,4 +27,128 @@ h3, h4, h5, h6 {
 
 section {
   padding: 4rem 0;
+}
+
+.main-body {
+
+  border-right: 1px solid $divider;
+
+  .client-row {
+    margin: 3rem 0;
+  }
+
+  h2 {
+    font-weight: 700;
+  }
+
+  h4 {
+    border: none;
+    color: $nhs_main;
+    margin-bottom: 1rem;
+    padding-bottom: 0;
+  }
+
+  a {
+    font-weight: 500;
+    color: $nhs_main;
+  }
+
+  strong {
+    color: $text_dark;
+
+    &:first-of-type {
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  ul, img {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    padding-left: 20px;
+
+    li {
+      margin-top: 0.4rem;
+      margin-bottom: 0.4rem;
+      color: $nhs_main;
+
+      span, p {
+        color: initial;
+      }
+
+      strong {
+        display: inline-block !important;
+        color: $nhs_main;
+        font-weight: 400;
+        margin: 0 !important;
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.sidebar {
+  .sidebar-nav-button {
+    display: block;
+    width: 100%;
+    background-color: $nhs_main;
+    color: white;
+    font-family: $nhs_font;
+    margin-bottom: 1rem;
+    border-radius: 0;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 600;
+    white-space: normal;
+    cursor: pointer;
+
+    &.sidebar-active {
+      background-color: $green_bg;
+    }
+
+    &.btn-download {
+      background-color: $orange_bg;
+    }
+
+    &.has-sub-menu {
+      margin-bottom: 0;
+    }
+
+    &.sidebar-sub-btn {
+      margin-bottom: 1px;
+      background-color: $mid_grey_bg;
+      color: $nhs_main;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+    }
+  }
+
+  h4 {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  hr {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-top: 4px solid $mid_light_bg;
+  }
+
+  .health-finder-widget {
+    img {
+      max-width: 100%;
+    }
+
+    text-align: center;
+    background-color: #f1f1f1;
+    padding: 1rem 0;
+  }
 }

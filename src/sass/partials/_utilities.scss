@@ -4,3 +4,8 @@
 .no-padding {
   padding: 0;
 }
+
+.no-bullets {
+  padding-left: 0 !important;
+  list-style: none !important;
+}

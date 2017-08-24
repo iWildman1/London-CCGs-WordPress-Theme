@@ -45,8 +45,34 @@ header {
 
     li {
       padding: 0.8rem 1rem;
+      position: relative;
+
+      .sub-menu {
+        display: none;
+        position: absolute;
+        min-width: 100%;
+        z-index: 1;
+        list-style: none;
+        padding-left: 0;
+        left: 0;
+        top: calc(100% + 4px);
+        background-color: $nhs_main;
+        width: max-content;
+
+        li {
+          &:hover, &.active {
+            background-color: $green_bg;
+          }
+        }
+
+      }
+
       &:hover, &.active {
         background-color: $nhs_main;
+        .sub-menu {
+          display: block;
+        }
+
         a {
           color: white;
           text-decoration: none;
@@ -67,7 +93,6 @@ header {
       display: flex;
       justify-content: space-between;
       padding-left: 0;
-
 
     }
   }

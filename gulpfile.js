@@ -22,6 +22,8 @@ gulp.task('sass', function() {
         }))
         .pipe(gulp.dest('./'))
         .pipe(browserSync.stream());
+
+    return true;
 });
 
 gulp.task('development', ['sass', 'browser-sync'], function() {
