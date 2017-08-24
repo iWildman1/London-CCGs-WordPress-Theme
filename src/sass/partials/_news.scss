@@ -128,3 +128,45 @@
     height: 500px !important;
   }
 }
+
+.news-body {
+  .news-meta {
+
+    border-bottom: 1px solid $mid_grey_bg;
+
+    h5 {
+      border: none;
+      display: inline-block;
+      font-size: 1rem;
+      color: $nhs_main;
+      padding-bottom: 0;
+    }
+
+    .date {
+      font-size: 0.9rem;
+    }
+  }
+
+  .news-title {
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+
+  .news-info {
+    margin-top: 1.5rem;
+  }
+
+  img {
+    float: left;
+    margin-top: 0;
+  }
+
+  .align-left {
+    float: left;
+    margin-right: 10px;
+  }
+  .align-right {
+    float: right;
+    margin-left: 10px;
+  }
+}
