@@ -1,0 +1,130 @@
+.news-featured-container {
+  height: 100%;
+  position: relative;
+}
+
+.news-featured {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 600px;
+  background-color: white;
+  padding: 2rem 3rem;
+
+  h3 {
+    font-weight: 400;
+    color: $nhs_main;
+    border: none;
+    margin: 0;
+  }
+
+  p {
+    color: $nhs_main;
+  }
+
+  button {
+    border-radius: 0;
+    background-color: $green_bg;
+    color: white;
+    font-family: $nhs_font;
+    cursor: pointer;
+  }
+}
+
+.filter-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+
+  h2 {
+    margin: 0;
+    border-bottom: 3px solid $orange_bg;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+
+    li {
+      margin-right: 1rem;
+      display: inline-block;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.news-grid {
+  .row {
+    align-items: flex-start;
+
+    .col-md-6 {
+      img {
+        margin: 0;
+      }
+    }
+  }
+
+  .news-item-col {
+    margin-top: 1rem;
+  }
+}
+
+.pagination {
+  padding-left: 0 !important;
+  padding-top: 2rem;
+
+  li {
+    margin-right: 0.5rem;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+
+    &.pag-active, &.pag-control {
+      color: white;
+      background-color: $nhs_main;
+    }
+  }
+}
+
+.news-sidebar {
+  h4 {
+    color: $nhs_main;
+    border: none;
+    margin: 0;
+  }
+}
+
+.news-search {
+  input, input:focus {
+    position: relative;
+    border-radius: 0;
+    border: none;
+    background-color: $mid_light_bg;
+  }
+
+  .search-col {
+    padding: 0;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 0;
+    background-color: $nhs_main;
+    color: white;
+    padding: 0.37rem 0.8rem;
+  }
+}
+
+.sidebar-twitter {
+  margin-top: 2rem;
+
+  .twitter-timeline {
+    height: 500px !important;
+  }
+}
