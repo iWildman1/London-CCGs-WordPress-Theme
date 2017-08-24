@@ -107,6 +107,33 @@ section {
   img {
     max-width: 100%;
   }
+
+  .member-info {
+    border-top: 4px solid $mid_grey_bg;
+    border-bottom: 4px solid $mid_grey_bg;
+    padding: 1.5rem 0;
+    margin: 2rem 0;
+
+    .info-block {
+      margin-top: 1.5rem;
+
+      strong {
+        color: $nhs_main;
+        display: inline-block;
+        margin: 0;
+      }
+    }
+
+    h4 {
+      font-size: 1.3rem;
+      margin: 0;
+    }
+  }
+
+  .member-address {
+    color: $nhs_main;
+    font-weight: 600;
+  }
 }
 
 .sidebar {
@@ -126,7 +153,8 @@ section {
     padding: 1rem;
 
     &.sidebar-active {
-      background-color: $green_bg;
+      background-color: $green_bg !important;
+      color: white !important;
     }
 
     &.btn-download {
