@@ -5,7 +5,7 @@
 
 get_header();
 ?>
-<div class="banner" style="background-image: url(<?php bloginfo('stylesheet_directory') ?>/img/commissioning-banner.jpg);">
+<div class="banner" style="background-image: url(<?php bloginfo('stylesheet_directory') ?>/img/about-banner.jpg);">
     <ul class="banner-controls">
         <li class="active"></li>
         <li></li>

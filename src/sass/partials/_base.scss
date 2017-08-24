@@ -134,6 +134,18 @@ section {
     color: $nhs_main;
     font-weight: 600;
   }
+
+  .hlp-list {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      border-bottom: 1px solid $grey_bg;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      font-weight: 600;
+    }
+  }
 }
 
 .sidebar {
