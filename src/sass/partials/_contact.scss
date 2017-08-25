@@ -1,0 +1,45 @@
+.contact-form {
+
+  margin-top: 1.5rem;
+
+  input, textarea, input:focus, textarea:focus {
+    position: relative;
+    padding-left: 75px;
+    background-color: #eeeeee;
+    border-radius: 0;
+    border: 1px solid #bfbfbf;
+    font-family: $nhs_font;
+  }
+
+  textarea, textarea:focus {
+    padding-left: 90px;
+  }
+
+  .row {
+    margin-bottom: 1rem;
+  }
+
+  label {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25px;
+    margin: 0;
+    font-family: $nhs_font;
+    color: $nhs_main;
+    font-weight: 600;
+  }
+
+  input[type="submit"] {
+    padding: 0.5rem 2rem;
+    border: 0;
+    background-color: $nhs_main;
+    color: white;
+    cursor: pointer;
+  }
+
+  .label-top {
+    top: 20px;
+  }
+}

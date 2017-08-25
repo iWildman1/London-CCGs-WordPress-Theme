@@ -143,6 +143,23 @@ button {
     color: $nhs_main;
   }
 
+  .address {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: $nhs_main;
+    font-weight: 600;
+  }
+
+  .email-addresses {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    strong {
+      display: inline-block;
+      margin: 0;
+      color: $nhs_main;
+    }
+  }
+
   .hlp-list {
     list-style: none;
     padding-left: 0;
