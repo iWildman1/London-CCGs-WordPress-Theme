@@ -43,9 +43,39 @@ header {
     background-color: $mid_light_bg;
     border-bottom: 4px solid $nhs_main;
 
+    .current-menu-item {
+      background-color: $nhs_main;
+
+      a {
+        color: white;
+      }
+    }
+
+    .current_page_parent {
+      background-color: $nhs_main !important;
+
+      .current-menu-item {
+        background-color: $green_bg !important;
+      }
+
+      a {
+        color: white !important;
+      }
+    }
+
     li {
       padding: 0.8rem 1rem;
       position: relative;
+
+      &:first-of-type {
+        padding: 0.5rem 0.8rem 0.3rem 0.8rem;
+
+        i {
+          font-size: 2rem !important;
+        }
+      }
+
+
 
       .sub-menu {
         display: none;
@@ -61,6 +91,10 @@ header {
         border-top: 4px solid $nhs_main;
 
         li {
+          &:first-of-type {
+            padding: 0.8rem 1rem;
+          }
+
           &:hover, &.active {
             background-color: $green_bg;
           }

@@ -48,65 +48,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <ul class="navigation-items">
-                            <li class="nav-item active">
-                                <a href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#">London CCGs</a>
-                                <ul class="sub-menu">
-                                    <li class="sub-menu-item">
-                                        <a href="#">What is clinical commissioning?</a>
-                                    </li>
-                                    <li class="sub-menu-item">
-                                        <a href="#">Plans and programmes</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#">Transforming Health</a>
-                                <ul class="sub-menu">
-                                    <li class="sub-menu-item">
-                                        <a href="#">Commissioning for local populations</a>
-                                    </li>
-                                    <li class="sub-menu-item">
-                                        <a href="#">Devolution</a>
-                                    </li>
-                                    <li class="sub-menu-item">
-                                        <a href="#">Sustainability transformation plans</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#">Membership</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#">About Us</a>
-                                <ul class="sub-menu">
-                                    <li class="sub-menu-item">
-                                        <a href="#">The Office of London CCGs</a>
-                                    </li>
-                                    <li class="sub-menu-item">
-                                        <a href="#">Who we are</a>
-                                    </li>
-                                    <li class="sub-menu-item">
-                                        <a href="#">How we work</a>
-                                    </li>
-                                    <li class="sub-menu-item">
-                                        <a href="#">Healthy London Partnership</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#">News & Events</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#">Resources</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#">Contact</a>
-                            </li>
-                        </ul>
+                        <?php
+                            wp_nav_menu( array(
+                                'menu_class' => 'navigation-items'
+                            ) );
+                        ?>
                     </div>
                 </div>
             </div>
