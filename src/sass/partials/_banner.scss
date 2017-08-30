@@ -7,6 +7,10 @@
   background-position: center center;
   border-bottom: 14px solid $nhs_main;
 
+  @media(max-height: 900px) {
+    height: 550px;
+  }
+
   .banner-controls {
     position: absolute;
     bottom: 2rem;

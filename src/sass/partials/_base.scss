@@ -4,6 +4,16 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
+@media(max-width: 1200px) {
+  html, body {
+    font-size: 14px;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
 h1, h2 {
   color: $nhs_main;
 }
