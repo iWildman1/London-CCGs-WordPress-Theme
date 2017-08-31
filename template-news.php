@@ -126,28 +126,7 @@
                 </div>
 
             </div>
-            <div class="col-md-4 sidebar news-sidebar">
-                <h4>Search news</h4>
-                <form action="#" class="news-search">
-                    <div class="col-md-12 search-col">
-                        <input class="form-control" type="text">
-                        <button type="submit" class="">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </form>
-
-                <div class="sidebar-twitter">
-                    <a class="twitter-timeline" data-height="400" href="https://twitter.com/NHSEngland">Tweets by NHSEngland</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
-
-                <hr>
-
-                <div class="health-finder-widget">
-                    <img src="<?php bloginfo('stylesheet_directory') ?>/img/find-service.jpg" alt="">
-                </div>
-
-            </div>
+            <?php get_template_part('template-parts/content', 'sidebar') ?>
         </div>
     </div>
 </section>

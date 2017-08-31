@@ -1,17 +1,23 @@
 <?php
-/**
- * Template Name: Contact Main Template
- */
+    /**
+     * Template Name: Contact Main Template
+     */
 
-get_header();
+    $hero_image     = get_field('hero_image');
+    $intro_heading  = get_field('intro_heading');
+
+    $body_heading   = get_field('body_heading');
+    $body_content   = get_field('body_content');
+
+    get_header();
 ?>
-<div class="banner" style="background-image: url(<?php bloginfo('stylesheet_directory') ?>/img/resources-banner.jpg);">
+<div class="banner" style="background-image: url(<?php echo $hero_image ?>);">
 </div>
 <section class="home-intro no-padding light-grey-bg">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="heading-large">Contact</h2>
+                <h2 class="heading-large"><?php echo $intro_heading ?></h2>
 
                 <img class="skyline-img" src="<?php bloginfo('stylesheet_directory') ?>/img/skyline.png" alt="">
             </div>
@@ -23,30 +29,8 @@ get_header();
     <div class="container">
         <div class="row">
             <div class="col-md-8 main-body">
-                <h2>Contact Us</h2>
-                <strong>Contact subheading</strong>
-                <p>
-                    To learn more about the Office of CCGs and what we can do with you and for you, please contact Peter, Barbara or Erica.
-                </p>
-
-                <p class="address">
-                    Office of London CCGs<br>
-                    3rd Floor<br>
-                    1 Lower Marsh<br>
-                    London<br>
-                    SE1 7NT<br>
-                </p>
-
-                <strong>Email Addresses:</strong>
-                <p class="email-addresses">
-                    <strong>Peter Kohn</strong> - peterkohn@nhs.net<br>
-
-                    <strong>Barbara O’Connor</strong> - barbara.oconnor@nhs.net<br>
-
-                    <strong>Erica Reade</strong> - erica.reade@nhs.net<br>
-                </p>
-
-                <strong>Or use the form below:</strong>
+                <h2><?php echo $body_heading ?></h2>
+                <?php echo $body_content ?>
                 <form action="#" class="contact-form">
                     <div class="row">
                         <div class="col-12">
@@ -80,23 +64,7 @@ get_header();
                 </form>
 
             </div>
-            <div class="col-md-4 sidebar transforming-sidebar news-sidebar">
-                <h4>Search resources</h4>
-                <form action="#" class="news-search">
-                    <div class="col-md-12 search-col">
-                        <input class="form-control" type="text">
-                        <button type="submit" class="">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </form>
-
-                <hr>
-
-                <div class="health-finder-widget">
-                    <img src="<?php bloginfo('stylesheet_directory') ?>/img/find-service.jpg" alt="">
-                </div>
-            </div>
+            <?php get_template_part('template-parts/content', 'sidebar') ?>
         </div>
     </div>
 </section>

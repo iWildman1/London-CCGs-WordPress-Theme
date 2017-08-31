@@ -71,6 +71,32 @@
                             </div>
                         ';
                         break;
+                    case 'search':
+                        if ( get_sub_field('search_type') == "news") {
+                            $type = "news";
+                        } elseif ( get_sub_field('search_type') == "resources" ) {
+                            $type = "resources";
+                        }
+
+                        echo '
+                            <h4>Search ' . $type . '</h4>
+                            <form action="#" class="news-search">
+                                <div class="col-md-12 search-col">
+                                    <input class="form-control" type="text">
+                                    <button type="submit" class="">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        ';
+                        break;
+                    case 'twitter_widget':
+                        echo '
+                            <div class="sidebar-twitter">
+                                <a class="twitter-timeline" data-height="400" href="' . get_sub_field('twitter_feed_url') . '">Tweets</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                        ';
+                        break;
                 }
 
                 $sidebar_iterator++;

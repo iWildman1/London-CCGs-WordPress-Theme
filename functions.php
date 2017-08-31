@@ -165,3 +165,14 @@ function custom_excerpt_more( $more ) {
     return '...';
 }
 add_filter( 'excerpt_more', 'custom_excerpt_more' );
+
+function register_resources_post_type() {
+    register_post_type('resources', array(
+        'name'          => 'resources',
+        'singular_name' => 'resource',
+        'public'        => true,
+        'label'         => 'Resources'
+    ));
+}
+
+add_action('init', 'register_resources_post_type');
