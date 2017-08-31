@@ -9,3 +9,22 @@
   padding-left: 0 !important;
   list-style: none !important;
 }
+
+.alignleft {
+  float: left !important;
+  margin-bottom: 0 !important;
+  padding-right: 1rem !important;
+}
+
+.alignright {
+  float: right !important;
+  margin-bottom: 0 !important;
+  padding-left: 1rem !important;
+}
+
+.aligncenter {
+  float: none !important;
+  text-align: center !important;
+  margin: 0.7rem auto !important;
+  display: block !important;
+}

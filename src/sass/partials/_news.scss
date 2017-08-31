@@ -59,6 +59,8 @@
 }
 
 .news-grid {
+  box-sizing: border-box !important;
+
   .row {
     align-items: flex-start;
 
@@ -70,23 +72,35 @@
   }
 
   .news-item-col {
-    margin-top: 1rem;
+    max-width: 50%;
+    width: 49%;
+    height: auto;
+    margin-bottom: 10px;
+
+    img {
+      margin: 0;
+      width: 100%;
+    }
   }
 }
 
-.pagination {
-  padding-left: 0 !important;
-  padding-top: 2rem;
+ul.page-numbers {
+  padding-left: 0;
+}
+
+.page-numbers {
+  padding: 0.6rem 0.7rem;
+  list-style: none;
+
+  .current, .next, .prev {
+    color: white !important;
+    background-color: $nhs_main !important;
+  }
 
   li {
-    margin-right: 0.5rem;
-    padding: 0.3rem 0.7rem;
+    margin-right: 0.2rem;
     cursor: pointer;
-
-    &.pag-active, &.pag-control {
-      color: white;
-      background-color: $nhs_main;
-    }
+    display: inline-block;
   }
 }
 

@@ -1,35 +1,59 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package London_Clinical_Commissioning_Groups
- */
+    /**
+     * Template Name: News and Events Single Template
+     */
 
-get_header(); ?>
+    get_header();
+?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<?php if ( have_posts() ):  ?>
+    <?php while ( have_posts() ) : the_post(); ?>
 
-		<?php
-		while ( have_posts() ) : the_post();
+        <section class="body-with-sidebar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 main-body news-body">
 
-			get_template_part( 'template-parts/content', get_post_type() );
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt="">
+                        <div class="news-meta">
+                            <h5><?php the_author(); ?></h5><span class="date"> - <?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) ?> ago</span>
+                        </div>
 
-			the_post_navigation();
+                        <h1 class="news-title">
+                            <?php the_title(); ?>
+                        </h1>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+                        <p class="news-info">
+                            <?php the_content(); ?>
+                        </p>
 
-		endwhile; // End of the loop.
-		?>
+                    </div>
+                    <div class="col-md-4 sidebar news-sidebar">
+                        <h4>Search news</h4>
+                        <form action="#" class="news-search">
+                            <div class="col-md-12 search-col">
+                                <input class="form-control" type="text">
+                                <button type="submit" class="">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </form>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+                        <div class="sidebar-twitter">
+                            <a class="twitter-timeline" data-height="400" href="https://twitter.com/NHSEngland">Tweets by NHSEngland</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
 
-<?php
-get_sidebar();
-get_footer();
+                        <hr>
+
+                        <div class="health-finder-widget">
+                            <img src="<?php bloginfo('stylesheet_directory') ?>/img/find-service.jpg" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    <?php endwhile; ?>
+<?php endif; ?>
+
+<?php get_footer(); ?>

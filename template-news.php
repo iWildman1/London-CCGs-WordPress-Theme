@@ -1,16 +1,35 @@
 <?php
-/**
- * Template Name: News and Events List Template
- */
+    /**
+     * Template Name: News and Events List Template
+     */
 
-get_header();
+    $hero_image     = get_field('hero_image');
+    $intro_heading  = get_field('intro_heading');
+
+    $post_iterator = 0;
+
+    get_header();
 ?>
-<div class="banner" style="background-image: url(<?php bloginfo('stylesheet_directory') ?>/img/news-banner.jpg);">
+<div class="banner" style="background-image: url(<?php echo $hero_image ?>);">
     <div class="container news-featured-container">
         <div class="news-featured">
-            <h3>News latest long title sits over two lines.</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-            <button class="btn">Read More</button>
+            <?php
+                $query = new WP_Query( array(
+                    'post_type'      => "post",
+                    'posts_per_page' => 1
+                ) );
+
+                if ( $query->have_posts() ) :
+                    while ( $query->have_posts() ) : $query->the_post();
+                        echo '
+                            <h3>' . get_the_title() . '</h3>
+                            <p>' . get_the_excerpt() . '</p>
+                            <a href="' . get_the_permalink() . '"><button class="btn">Read More</button></a>
+                        ';
+                    endwhile;
+                    wp_reset_postdata();
+                endif;
+            ?>
         </div>
     </div>
 </div>
@@ -18,7 +37,7 @@ get_header();
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="heading-large">News and events</h2>
+                <h2 class="heading-large"><?php echo $intro_heading ?></h2>
 
                 <img class="skyline-img" src="<?php bloginfo('stylesheet_directory') ?>/img/skyline.png" alt="">
             </div>
@@ -47,111 +66,62 @@ get_header();
                 </div>
 
                 <div class="news-grid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="news-item-col">
-                                <img src="<?php bloginfo('stylesheet_directory') ?>/img/news-2.jpg" alt="">
-                                <div class="news-item-col-info">
-                                    <h5><a href="#">Lorem ipsum dolor sit amet</a></h5>
-                                    <span class="blog-meta-info">Forename Surname - 2 weeks 22 hours ago</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, at atque blanditiis consequatur consequuntur.</p>
-                                    <button class="btn read-more">More</button>
-                                </div>
-                            </div>
-                            <div class="news-item-col">
-                                <div class="news-item-col-info">
-                                    <h5><a href="#">Lorem ipsum dolor sit amet</a></h5>
-                                    <span class="blog-meta-info">Forename Surname - 2 weeks 22 hours ago</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, at atque blanditiis consequatur consequuntur.</p>
-                                    <button class="btn read-more">More</button>
-                                </div>
-                            </div>
-                            <div class="news-item-col">
-                                <img src="<?php bloginfo('stylesheet_directory') ?>/img/news-2.jpg" alt="">
-                                <div class="news-item-col-info">
-                                    <h5><a href="#">Lorem ipsum dolor sit amet</a></h5>
-                                    <span class="blog-meta-info">Forename Surname - 2 weeks 22 hours ago</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, at atque blanditiis consequatur consequuntur.</p>
-                                    <button class="btn read-more">More</button>
-                                </div>
-                            </div>
-                            <div class="news-item-col">
-                                <img src="<?php bloginfo('stylesheet_directory') ?>/img/news-2.jpg" alt="">
-                                <div class="news-item-col-info">
-                                    <h5><a href="#">Lorem ipsum dolor sit amet</a></h5>
-                                    <span class="blog-meta-info">Forename Surname - 2 weeks 22 hours ago</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, at atque blanditiis consequatur consequuntur.</p>
-                                    <button class="btn read-more">More</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="news-item-col">
 
-                                <div class="news-item-col-info">
-                                    <h5><a href="#">Lorem ipsum dolor sit amet</a></h5>
-                                    <span class="blog-meta-info">Forename Surname - 2 weeks 22 hours ago</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, at atque blanditiis consequatur consequuntur.</p>
-                                    <button class="btn read-more">More</button>
-                                </div>
-                            </div>
-                            <div class="news-item-col">
-                                <img src="<?php bloginfo('stylesheet_directory') ?>/img/news-2.jpg" alt="">
-                                <div class="news-item-col-info">
-                                    <h5><a href="#">Lorem ipsum dolor sit amet</a></h5>
-                                    <span class="blog-meta-info">Forename Surname - 2 weeks 22 hours ago</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, at atque blanditiis consequatur consequuntur.</p>
-                                    <button class="btn read-more">More</button>
-                                </div>
-                            </div>
-                            <div class="news-item-col">
+                    <?php
+                        $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
-                                <div class="news-item-col-info">
-                                    <h5><a href="#">Lorem ipsum dolor sit amet</a></h5>
-                                    <span class="blog-meta-info">Forename Surname - 2 weeks 22 hours ago</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, at atque blanditiis consequatur consequuntur.</p>
-                                    <button class="btn read-more">More</button>
-                                </div>
-                            </div>
-                            <div class="news-item-col">
+                        $query = new WP_Query( array(
+                            'post_type'      => 'post',
+                            'posts_per_page' => 11,
+                            'paged'          => $paged
+                        ) );
 
-                                <div class="news-item-col-info">
-                                    <h5><a href="#">Lorem ipsum dolor sit amet</a></h5>
-                                    <span class="blog-meta-info">Forename Surname - 2 weeks 22 hours ago</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, at atque blanditiis consequatur consequuntur.</p>
-                                    <button class="btn read-more">More</button>
-                                </div>
-                            </div>
-                            <div class="news-item-col">
-                                <img src="<?php bloginfo('stylesheet_directory') ?>/img/news-2.jpg" alt="">
-                                <div class="news-item-col-info">
-                                    <h5><a href="#">Lorem ipsum dolor sit amet</a></h5>
-                                    <span class="blog-meta-info">Forename Surname - 2 weeks 22 hours ago</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, at atque blanditiis consequatur consequuntur.</p>
-                                    <button class="btn read-more">More</button>
-                                </div>
-                            </div>
-                        </div>
+                        if ( $query->have_posts() ) :
+                            while ( $query->have_posts() ) : $query->the_post();
 
-                    </div>
+                            if ( $post_iterator == 0 && $paged == 1 ) {
+                                echo '';
+                            } else {
+                                echo '
+                                    <div class="news-item-col">
+                                        <img src="' . get_the_post_thumbnail_url() . '" alt="">
+                                        <div class="news-item-col-info">
+                                            <h5><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h5>
+                                            <span class="blog-meta-info">' . get_the_author() . ' - ' . human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . '</span>
+                                            <p>' . get_the_excerpt() . '</p>
+                                            <a href="' . get_the_permalink() . '"><button class="btn read-more">More</button></a>
+                                        </div>
+                                    </div>
+                                ';
+                            }
+
+                            wp_reset_postdata();
+                            $post_iterator++;
+                            endwhile;
+                        endif;
+                    ?>
                 </div>
 
                 <div class="row">
                     <div class="col-12">
-                        <ul class="pagination">
-                            <li class="pag-active">1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
-                            <li>5</li>
-                            <li>6</li>
-                            <li>7</li>
-                            <li>8</li>
-                            <li>9</li>
-                            <li>...</li>
-                            <li class="pag-control">Next</li>
-                            <li class="pag-control">Last</li>
-                        </ul>
+                        <?php $args = array(
+                            'base'               => '%_%',
+                            'format'             => '?paged=%#%',
+                            'total'              => $query->max_num_pages,
+                            'current'            => max(1, get_query_var('paged') ),
+                            'show_all'           => false,
+                            'end_size'           => 5,
+                            'mid_size'           => 10,
+                            'prev_next'          => true,
+                            'prev_text'          => 'Back',
+                            'next_text'          => 'Next',
+                            'type'               => 'list',
+                            'add_args'           => false,
+                            'add_fragment'       => '',
+                            'before_page_number' => '',
+                            'after_page_number'  => ''
+                        ); ?>
+                        <?php echo paginate_links( $args ); ?>
                     </div>
                 </div>
 
