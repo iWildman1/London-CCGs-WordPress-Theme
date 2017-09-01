@@ -42,9 +42,12 @@
                                         if ( $current_id == $child->ID ) {
                                             $sub_active_class = "sidebar-active";
                                         }
+                                        $post = $child;
+                                        setup_postdata( $post );
                                         echo '
-                                            <a href="' . $child->guid . '"><button class="btn sidebar-nav-button sidebar-sub-btn ' . $sub_active_class . '">' . $child->post_title . '</button></a>
+                                            <a href="' . get_the_permalink() . '"><button class="btn sidebar-nav-button sidebar-sub-btn ' . $sub_active_class . '">' . get_the_title() . '</button></a>
                                         ';
+                                        wp_reset_postdata();
                                     }
                                     echo '</div>';
                                 }

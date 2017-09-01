@@ -44,6 +44,16 @@ button {
   font-family: $nhs_font !important;
 }
 
+.gmap-container {
+  margin-top: 2rem;
+  max-width: 100%;
+
+  iframe {
+    width: 100%;
+    height: 400px;
+  }
+}
+
 .main-body {
 
   border-right: 1px solid $divider;

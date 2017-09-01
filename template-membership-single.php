@@ -7,7 +7,6 @@
     $intro_heading  = get_field('intro_heading');
 
     $member_address = get_field('member_address');
-    $member_map     = get_field('member_map');
 
     $membership_iterator = 0;
 
@@ -65,7 +64,12 @@
                 <div class="member-address">
                     <?php echo $member_address ?>
                 </div>
-                <img src="<?php echo $member_map ?>" alt="">
+                <div class="gmap-container">
+                    <iframe
+                            frameborder="0" style="border:0"
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNiFOcgNsjfpyIG7oyBZXw2-7B7Uvjw_M&q=<?php echo urlencode($post->post_title) ?>+CCG,London" allowfullscreen>
+                    </iframe>
+                </div>
             </div>
             <?php get_template_part('template-parts/content', 'sidebar') ?>
         </div>
