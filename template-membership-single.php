@@ -15,7 +15,7 @@
 <div class="banner" style="background-image: url(<?php echo $hero_image ?>);">
 
 </div>
-<section class="home-intro no-padding light-grey-bg">
+<section class="home-intro no-padding light-grey-bg" id="content-start">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">

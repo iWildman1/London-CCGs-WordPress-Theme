@@ -17,6 +17,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('stylesheet_directory') ?>/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('stylesheet_directory') ?>/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('stylesheet_directory') ?>/icons/favicon-16x16.png">
+    <link rel="manifest" href="<?php bloginfo('stylesheet_directory') ?>/icons/manifest.json">
+    <link rel="mask-icon" href="<?php bloginfo('stylesheet_directory') ?>/icons/safari-pinned-tab.svg" color="#007bc4">
+    <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory') ?>/icons/favicon.ico">
+    <meta name="msapplication-config" content="<?php bloginfo('stylesheet_directory') ?>/icons/browserconfig.xml">
+    <meta name="theme-color" content="#007bc4">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 

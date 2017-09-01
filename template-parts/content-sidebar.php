@@ -33,7 +33,7 @@
                                     $child_class = "has-sub-menu";
                                 }
 
-                                echo '<a href="' . get_the_permalink() .'"><button class="btn sidebar-nav-button ' . $active_class . ' ' . $child_class . ' ">' . get_the_title() . '</button></a>';
+                                echo '<a href="' . get_the_permalink() .'#content-start"><button class="btn sidebar-nav-button ' . $active_class . ' ' . $child_class . ' ">' . get_the_title() . '</button></a>';
 
                                 if ($children) {
                                     echo '<div class="sidebar-sub-menu">';
@@ -45,7 +45,7 @@
                                         $post = $child;
                                         setup_postdata( $post );
                                         echo '
-                                            <a href="' . get_the_permalink() . '"><button class="btn sidebar-nav-button sidebar-sub-btn ' . $sub_active_class . '">' . get_the_title() . '</button></a>
+                                            <a href="' . get_the_permalink() . '#content-start"><button class="btn sidebar-nav-button sidebar-sub-btn ' . $sub_active_class . '">' . get_the_title() . '</button></a>
                                         ';
                                         wp_reset_postdata();
                                     }

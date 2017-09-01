@@ -7,7 +7,7 @@ get_header();
 ?>
 <div class="banner" style="background-image: url(<?php bloginfo('stylesheet_directory') ?>/img/resources-banner.jpg);">
 </div>
-<section class="home-intro no-padding light-grey-bg">
+<section class="home-intro no-padding light-grey-bg" id="content-start">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
