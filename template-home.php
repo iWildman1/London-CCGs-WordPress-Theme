@@ -14,7 +14,7 @@
     $map_image          = get_field('map_image');
     $col_3_title        = get_field('col_3_title');
     $video_thumbnail    = get_field('video_thumbnail');
-    $video_file         = get_field('col_3_video_file');
+    $video_url          = get_field('col_3_video_file');
 
     get_header();
 ?>
@@ -71,8 +71,13 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="video-container" style="background-image: url(<?php echo $video_thumbnail ?>);">
-                    <i class="fa fa-play fa-5x" aria-hidden="true"></i>
+                <div class="video-container" id="video-container" style="background-image: url(<?php echo $video_thumbnail ?>);">
+                    <i class="fa fa-play fa-5x" id="homePlayBtn" aria-hidden="true"></i>
+                    <div class="modal-container">
+                        <div class="modal-box">
+                            <iframe src="https://player.vimeo.com/video/<?php echo $video_url ?>" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

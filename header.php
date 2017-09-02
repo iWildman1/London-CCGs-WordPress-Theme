@@ -59,12 +59,20 @@
         <nav>
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 nav-col-12">
                         <?php
                             wp_nav_menu( array(
                                 'menu_class' => 'navigation-items'
                             ) );
                         ?>
+                        <button class="hamburger hamburger--collapse" type="button">
+                          <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                          </span>
+                        </button>
+                        <div class="hamburger-label">
+                            <span>Menu</span>
+                        </div>
                     </div>
                 </div>
             </div>

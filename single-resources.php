@@ -23,7 +23,6 @@
 
 <?php if ( have_posts() ): ?>
     <?php while ( have_posts() ) : the_post(); ?>
-
         <section class="body-with-sidebar">
             <div class="container">
                 <div class="row">
@@ -34,6 +33,12 @@
                             <?php
                                 if ( have_rows('files') ) :
                                     while ( have_rows('files') ) : the_row();
+                                        $file_type = get_sub_field('file_type');
+                                        if ( $file_type ) {
+                                            $file_type_img = '<img src="' . get_bloginfo('stylesheet_directory') . '/img/' . $file_type . '-icon.jpg" alt="">';
+                                        } else {
+                                            $file_type_img = '';
+                                        }
                                         echo '
                                             <div class="resource">
                                                 <div class="row">
@@ -43,7 +48,7 @@
                                                     <div class="col-10">
                                                         <h5>' . get_sub_field('file_name_individual') . '</h5>
                                                         <a href="' . get_sub_field('file')["url"] . '" download><button class="btn btn-download">Download</button></a>
-                                                        <img src="<?php bloginfo(\'stylesheet_directory\') ?>/img/pdf-icon.jpg" alt="">
+                                                        ' . $file_type_img . '
                                                     </div>
                                                 </div>
                                             </div>

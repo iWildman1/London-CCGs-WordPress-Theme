@@ -1,0 +1,127 @@
+/**
+  * MOBILE PHONE STYLES
+  */
+
+@media (max-width: 370px) {
+  .pull-right {
+    display: none;
+  }
+
+  .upper-header {
+    margin: 1rem !important;
+  }
+
+  .upper-header-container {
+    img {
+      max-width: 80%;
+    }
+  }
+}
+
+@media(max-width: 554px) {
+  .upper-header-container {
+    flex-direction: column;
+
+    img {
+      max-width: 65%;
+    }
+    .pull-right {
+      margin-top: 1rem;
+      width: 100%;
+
+      input {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+/**
+  * TABLET STYLES
+  */
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: inline-block;
+    z-index: 9999;
+    padding-right: 0.7rem;
+    line-height: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+      background-color: $nhs_main;
+    }
+  }
+
+  .hamburger-label {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    span {
+      text-transform: uppercase;
+      color: $nhs_main;
+    }
+  }
+
+  .nav-col-12 {
+    display: block;
+  }
+
+  .menu-primary-menu-container {
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 4px);
+    left: 0;
+    background-color: $nhs_main;
+    overflow: hidden;
+    width: 100%;
+
+    .navigation-items {
+      flex-direction: column;
+      width: 100%;
+      transition: max-height 0.5s ease-in-out;
+      max-height: 0;
+
+      .sub-menu {
+        display: block;
+        position: static;
+        max-height: 0;
+        overflow: hidden;
+
+
+        &.sub-menu-active {
+          max-height: 1000px;
+          transition: max-height 2s ease-in-out;
+
+          li {
+            padding: 0.8rem;
+            background-color: darken($nhs_main, 10%);
+          };
+        }
+      }
+
+      &.mobile-nav-active {
+        max-height: 2000px;
+      }
+
+      li {
+        padding-left: 1.5rem;
+
+        &.current-menu-item {
+          background-color: $green_bg;
+        }
+
+        a {
+          color: white;
+
+        }
+      }
+    }
+  }
+}

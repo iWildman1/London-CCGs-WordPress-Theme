@@ -271,3 +271,114 @@ button {
     padding: 1rem 0;
   }
 }
+
+.modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+
+
+
+  .modal-box {
+    background-color: white;
+    z-index: 2;
+    line-height: 0;
+    opacity: 0;
+  }
+
+  &.modal-active {
+
+    animation-name: modalBackgroundFade;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    opacity: 1;
+
+    .modal-box {
+      animation-name: modalBoxScale;
+      animation-duration: 400ms;
+      animation-fill-mode: forwards;
+      animation-delay: 150ms;
+    }
+  }
+
+  &.modal-out {
+    animation-name: modalBackgroundFadeOut;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+
+    .modal-box {
+      animation-name: modalBoxScaleOut;
+      animation-duration: 300ms;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@keyframes modalBackgroundFade {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes modalBackgroundFadeOut {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  40% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes modalBoxScale {
+  0% {
+    transform: scale(0);
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes modalBoxScaleOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+

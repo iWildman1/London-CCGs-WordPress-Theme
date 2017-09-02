@@ -51,11 +51,14 @@
                                         $file_button = 'Find out more';
                                         $download_link = get_the_permalink();
                                         $download = '';
+                                        $icon_link = "";
 
                                     } elseif ($files_count == 1) {
                                         $file_button = 'Download';
                                         $download_link = $files[0]["file"]["url"];
                                         $download = 'download';
+                                        $icon = $files[0]["file_type"];
+                                        $icon_link = '<img src="' . get_bloginfo('stylesheet_directory') . '/img/' . $icon . '-icon.jpg" alt="">';
                                     }
                                 endif;
                                 echo '
@@ -68,7 +71,7 @@
                                                 <h5>' . get_the_title() . '</h5>
                                                 <p>' . get_field('resource_description') . '</p>
                                                 <a href="' . $download_link . '" ' . $download . '><button class="btn btn-download">' . $file_button . '</button></a>
-                                                <img src="<?php bloginfo(\'stylesheet_directory\') ?>/img/pdf-icon.jpg" alt="">
+                                                ' . $icon_link . '
                                             </div>
                                         </div>
                                     </div>
