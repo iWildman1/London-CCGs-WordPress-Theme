@@ -20,6 +20,10 @@
   }
 }
 
+.info-box {
+  margin-top: 2rem;
+}
+
 .find-service {
   width: 100%;
   text-align: center;
@@ -115,4 +119,5 @@
 
 .twitter-timeline-rendered {
   height: 100% !important;
+  min-height: 350px !important;
 }

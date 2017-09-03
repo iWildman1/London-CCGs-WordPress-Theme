@@ -40,42 +40,46 @@
 </section>
 <section class="light-grey-bg">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row match-height-parent margin-bottom">
+            <div class="col-md-4 info-box">
                 <h3><?php echo $col_1_title ?></h3>
-            </div>
-            <div class="col-md-4">
-                <h3><?php echo $col_2_title ?></h3>
-            </div>
-            <div class="col-md-4">
-                <h3><?php echo $col_3_title ?></h3>
-            </div>
-        </div>
-        <div class="row content-row">
-            <div class="col-md-4">
-                <div class="find-service">
-                    <?php
-                        if ( $mhl_embed_code != "" ) {
-                            echo $mhl_embed_code;
-                        } else {
-                            echo '
+                <div class="row pad-top">
+                    <div class="col-12 match-height-child">
+                        <div class="find-service">
+                            <?php
+                            if ( $mhl_embed_code != "" ) {
+                                echo $mhl_embed_code;
+                            } else {
+                                echo '
                                 <img src="' . $mhl_placeholder . '" alt="">
                             ';
-                        }
-                    ?>
+                            }
+                            ?>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="map-container">
-                    <img src="<?php echo $map_image ?>" alt="">
+            <div class="col-md-4 info-box">
+                <h3><?php echo $col_2_title ?></h3>
+                <div class="row pad-top">
+                    <div class="col-12 match-height-child">
+                        <div class="map-container">
+                            <img src="<?php echo $map_image ?>" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="video-container" id="video-container" style="background-image: url(<?php echo $video_thumbnail ?>);">
-                    <i class="fa fa-play fa-5x" id="homePlayBtn" aria-hidden="true"></i>
-                    <div class="modal-container">
-                        <div class="modal-box">
-                            <iframe src="https://player.vimeo.com/video/<?php echo $video_url ?>" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <div class="col-md-4 info-box">
+                <h3><?php echo $col_3_title ?></h3>
+                <div class="row pad-top">
+                    <div class="col-12 match-height-child">
+                        <div class="video-container" id="video-container" style="background-image: url(<?php echo $video_thumbnail ?>);">
+                            <i class="fa fa-play fa-5x" id="homePlayBtn" aria-hidden="true"></i>
+                            <div class="modal-container">
+                                <div class="modal-box">
+                                    <iframe src="https://player.vimeo.com/video/<?php echo $video_url ?>" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -91,7 +95,7 @@
                 <h3>Latest news and events</h3>
             </div>
         </div>
-        <div class="row content-row">
+        <div class="row">
 
             <?php
                 $query = new WP_Query( array(
@@ -102,7 +106,7 @@
                 if ( $query->have_posts() ) :
                     while( $query->have_posts() ) : $query->the_post();
                         echo '
-                            <div class="col-md-4">
+                            <div class="col-md-4 info-box">
                                 <div class="news-item-col">
                                     <img src="' . get_the_post_thumbnail_url() .'" alt="">
                                     <div class="news-item-col-info">
@@ -117,7 +121,7 @@
                     endwhile;
                 endif;
             ?>
-            <div class="col-md-4">
+            <div class="col-md-4 info-box">
                 <div class="twitter-timeline">
                     <a class="twitter-timeline" data-height="400" href="https://twitter.com/NHSEngland">Tweets by NHSEngland</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>

@@ -77,15 +77,18 @@
                     case 'search':
                         if ( get_sub_field('search_type') == "news") {
                             $type = "news";
+                            $post_type = "post";
                         } elseif ( get_sub_field('search_type') == "resources" ) {
                             $type = "resources";
+                            $post_type = "resources";
                         }
 
                         echo '
                             <h4>Search ' . $type . '</h4>
-                            <form action="#" class="news-search">
+                            <form action="/" class="news-search">
                                 <div class="col-md-12 search-col">
-                                    <input class="form-control" type="text">
+                                    <input class="form-control" type="text" name="s">
+                                    <input type="hidden" name="post_type" value="' . $post_type . '">
                                     <button type="submit" class="">
                                         <i class="fa fa-search" aria-hidden="true"></i>
                                     </button>

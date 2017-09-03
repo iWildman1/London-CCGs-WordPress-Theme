@@ -20,7 +20,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "68f9508f30b2013ab070"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9f3d3216dd11e7a50497"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -714,6 +714,7 @@ var modalContainer = document.querySelector('.modal-container');
 var body = document.querySelector('body');
 var mobileNavHamburger = document.querySelector('.hamburger');
 var navigationItemsWithChildren = document.querySelectorAll('.menu-item-has-children');
+var matchHeightElements = document.querySelectorAll('.match-height-parent');
 
 var mobileNavOpen = false;
 
@@ -794,6 +795,25 @@ if (navigationItemsWithChildren) {
             }
         })
     }
+}
+
+if (matchHeightElements) {
+    imagesLoaded(matchHeightElements, function() {
+        for (var i = 0; i < matchHeightElements.length; i++) {
+            var matchHeightTargets = matchHeightElements[i].querySelectorAll('.match-height-child');
+            var largestHeight = 0;
+
+            for (var j = 0; j < matchHeightTargets.length; j++) {
+                if (matchHeightTargets[j].clientHeight > largestHeight) {
+                    largestHeight = matchHeightTargets[j].clientHeight;
+                }
+            }
+
+            for (var j = 0; j < matchHeightTargets.length; j++) {
+                matchHeightTargets[j].style.height = largestHeight + "px";
+            }
+        }
+    })
 }
 
 

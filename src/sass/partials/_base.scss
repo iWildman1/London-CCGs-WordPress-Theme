@@ -293,6 +293,11 @@ button {
     z-index: 2;
     line-height: 0;
     opacity: 0;
+    max-width: 90%;
+
+    iframe {
+      max-width: 100%;
+    }
   }
 
   &.modal-active {
@@ -380,5 +385,26 @@ button {
     transform: scale(0);
     opacity: 0;
   }
+}
+
+.search-post-container {
+  .search-post-inner {
+    background-color: $mid_light_bg;
+    padding: 1rem;
+
+    h5 {
+      border: 0;
+      color: $nhs_main;
+    }
+
+    span {
+      text-transform: capitalize;
+    }
+  }
+  margin-bottom: 1rem;
+}
+
+.search-body {
+  border: 0;
 }
 

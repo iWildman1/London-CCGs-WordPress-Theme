@@ -87,7 +87,7 @@
                                         <img src="' . get_the_post_thumbnail_url() . '" alt="">
                                         <div class="news-item-col-info">
                                             <h5><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h5>
-                                            <span class="blog-meta-info">' . get_the_author() . ' - ' . human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . '</span>
+                                            <span class="blog-meta-info">' . get_the_author() . ' - ' . human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago</span>
                                             <p>' . get_the_excerpt() . '</p>
                                             <a href="' . get_the_permalink() . '"><button class="btn read-more">More</button></a>
                                         </div>

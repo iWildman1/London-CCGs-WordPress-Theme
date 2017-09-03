@@ -45,8 +45,8 @@
                             <img src="<?php bloginfo('stylesheet_directory') ?>/img/Logo.png" alt="">
                         </div>
                         <div class="pull-right">
-                            <form action="#" class="header-search">
-                                <input class="form-control" type="text">
+                            <form action="/" class="header-search">
+                                <input class="form-control" type="text" name="s">
                                 <button type="submit" class="">
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                 </button>
