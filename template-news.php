@@ -54,14 +54,16 @@
                         <h2>Latest</h2>
                     </div>
                     <div class="filters">
-                        <ul>
+                        <ul class="filter-list">
                             <li>Filter 1</li>
                             <li>Filter 2</li>
                             <li>Filter 3</li>
                             <li>Filter 4</li>
                             <li>Filter 5</li>
-
                         </ul>
+                        <span class="filter-toggle">
+                            Filter News & Events
+                        </span>
                     </div>
                 </div>
 
@@ -78,23 +80,17 @@
 
                         if ( $query->have_posts() ) :
                             while ( $query->have_posts() ) : $query->the_post();
-
-                            if ( $post_iterator == 0 && $paged == 1 ) {
-                                echo '';
-                            } else {
-                                echo '
-                                    <div class="news-item-col">
-                                        <img src="' . get_the_post_thumbnail_url() . '" alt="">
-                                        <div class="news-item-col-info">
-                                            <h5><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h5>
-                                            <span class="blog-meta-info">' . get_the_author() . ' - ' . human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago</span>
-                                            <p>' . get_the_excerpt() . '</p>
-                                            <a href="' . get_the_permalink() . '"><button class="btn read-more">More</button></a>
-                                        </div>
+                            echo '
+                                <div class="news-item-col">
+                                    <img src="' . get_the_post_thumbnail_url() . '" alt="">
+                                    <div class="news-item-col-info">
+                                        <h5><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h5>
+                                        <span class="blog-meta-info">' . get_the_author() . ' - ' . human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago</span>
+                                        <p>' . get_the_excerpt() . '</p>
+                                        <a href="' . get_the_permalink() . '"><button class="btn read-more">More</button></a>
                                     </div>
-                                ';
-                            }
-
+                                </div>
+                            ';
                             wp_reset_postdata();
                             $post_iterator++;
                             endwhile;

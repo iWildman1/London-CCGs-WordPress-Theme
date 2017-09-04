@@ -6,6 +6,7 @@ var body = document.querySelector('body');
 var mobileNavHamburger = document.querySelector('.hamburger');
 var navigationItemsWithChildren = document.querySelectorAll('.menu-item-has-children');
 var matchHeightElements = document.querySelectorAll('.match-height-parent');
+var filterToggle = document.querySelector('.filter-toggle');
 
 var mobileNavOpen = false;
 
@@ -103,6 +104,23 @@ if (matchHeightElements) {
             for (var j = 0; j < matchHeightTargets.length; j++) {
                 matchHeightTargets[j].style.height = largestHeight + "px";
             }
+        }
+    })
+}
+
+if (filterToggle) {
+    filterToggle.addEventListener('click', function() {
+        var filterList = document.querySelector('.filter-list');
+        if (filterList.classList.contains('filter-toggle-active')) {
+            var filtersActive = true;
+        } else {
+            filtersActive = false;
+        }
+
+        if (!filtersActive) {
+            filterList.classList.add('filter-toggle-active');
+        } else {
+            filterList.classList.remove('filter-toggle-active');
         }
     })
 }
