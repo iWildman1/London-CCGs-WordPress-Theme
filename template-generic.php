@@ -1,6 +1,7 @@
 <?php
+
     /**
-     * Template Name: Membership List Template
+     * Template Name: Generic Page Template
      */
 
     $hero_image     = get_field('hero_image');
@@ -9,12 +10,10 @@
     $body_heading   = get_field('body_heading');
     $body_content   = get_field('body_content');
 
-    $boundary_embed = get_field('boundary_embed_code');
-
     get_header();
 ?>
-<div class="banner" style="background-image: url(<?php echo $hero_image ?>);">
 
+<div class="banner" style="background-image: url(<?php echo $hero_image ?>);">
 </div>
 <section class="home-intro no-padding light-grey-bg" id="content-start">
     <div class="container">
@@ -34,11 +33,12 @@
             <div class="col-md-8 main-body">
                 <h2><?php echo $body_heading ?></h2>
                 <?php echo $body_content ?>
-                <?php echo $boundary_embed; ?>
             </div>
             <?php get_template_part('template-parts/content', 'sidebar') ?>
         </div>
     </div>
 </section>
 
-<?php get_footer(); ?>
+<?php
+    get_footer();
+?>

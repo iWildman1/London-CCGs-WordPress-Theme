@@ -2,13 +2,22 @@
     /**
      * Template Name: Membership Single Template
      */
-
-    $hero_image     = get_field('hero_image');
     $intro_heading  = get_field('intro_heading');
 
     $member_address = get_field('member_address');
 
+    $body_content = get_field('body_content');
+
     $membership_iterator = 0;
+
+    $parent_id = $post->post_parent;
+
+    $post = $parent_id;
+    setup_postdata($post);
+
+    $hero_image = get_field('hero_image');
+
+    wp_reset_postdata();
 
     get_header();
 ?>
@@ -32,6 +41,9 @@
         <div class="row">
             <div class="col-md-8 main-body">
                 <h2><?php echo $post->post_title ?></h2>
+                <div class="pad-top">
+                    <?php echo $body_content ?>
+                </div>
 
                 <div class="member-info">
                     <?php
@@ -48,11 +60,19 @@
                                         </div>
                                     ';
                                 } elseif ( $module_type == "social_media_data" ) {
-                                    echo '
+                                    if (get_sub_field('social_media_type') == "Website" || get_sub_field('social_media_type') == "website") {
+                                        echo '
+                                            <div class="info-block">
+                                                <strong>' . get_sub_field('social_media_type') .':</strong> ' . '<a href="' . get_sub_field('social_media_link') . '">' . get_sub_field('social_media_link') . '</a>
+                                            </div>
+                                        ';
+                                    } else {
+                                        echo '
                                         <div class="info-block">
                                             <strong>' . get_sub_field('social_media_type') .':</strong> ' . get_sub_field('social_media_link') . '
                                         </div>
                                     ';
+                                    }
                                 }
 
                                 $membership_iterator++;

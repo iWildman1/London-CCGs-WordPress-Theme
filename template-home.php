@@ -18,13 +18,14 @@
 
     get_header();
 ?>
-<div class="banner" style="background-image: url(<?php echo $hero_image ?>);">
-    <ul class="banner-controls">
-        <li class="active"></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+<div class="banner banner-home" style="background-image: url(<?php echo $hero_image ?>);">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Welcome to the Office of London Clinical Commissioning Groups</h1>
+            </div>
+        </div>
+    </div>
 </div>
 <section class="home-intro no-padding">
     <div class="container">
@@ -63,8 +64,8 @@
                 <h3><?php echo $col_2_title ?></h3>
                 <div class="row pad-top">
                     <div class="col-12 match-height-child">
-                        <div class="map-container">
-                            <img src="<?php echo $map_image ?>" alt="">
+                        <div class="map-container" style="background-image: url(<?php echo $map_image ?>)">
+                            <a href="/membership/#content-start"><div class="map-click-area"></div></a>
                         </div>
                     </div>
                 </div>

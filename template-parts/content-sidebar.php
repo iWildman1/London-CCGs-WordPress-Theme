@@ -5,7 +5,7 @@
 
 ?>
 
-<div class="col-md-4 sidebar transforming-sidebar">
+<div class="col-md-4 sidebar transforming-sidebar match-height-parent">
     <?php
         if ( have_rows('sidebar_modules') ) :
             $flexible_row = get_field('sidebar_modules');
@@ -33,7 +33,7 @@
                                     $child_class = "has-sub-menu";
                                 }
 
-                                echo '<a href="' . get_the_permalink() .'#content-start"><button class="btn sidebar-nav-button ' . $active_class . ' ' . $child_class . ' ">' . get_the_title() . '</button></a>';
+                                echo '<a href="' . get_the_permalink() .'#content-start"><button class="btn sidebar-nav-button match-height-child ' . $active_class . ' ' . $child_class . ' ">' . get_the_title() . '</button></a>';
 
                                 if ($children) {
                                     echo '<div class="sidebar-sub-menu">';
@@ -66,11 +66,12 @@
                         endif;
                         break;
                     case 'myhealthlondon_widget':
+                        $embed_code = get_sub_field('widget_embed_code');
                         echo '
                             <hr>
 
                             <div class="health-finder-widget">
-                                <img src="' . get_sub_field('widget_placeholder') . '" alt="">
+                                ' . $embed_code . '
                             </div>
                         ';
                         break;

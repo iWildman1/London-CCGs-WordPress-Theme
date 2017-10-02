@@ -10,29 +10,34 @@
 
     get_header();
 ?>
-<div class="banner" style="background-image: url(<?php echo $hero_image ?>);">
-    <div class="container news-featured-container">
-        <div class="news-featured">
-            <?php
-                $query = new WP_Query( array(
-                    'post_type'      => "post",
-                    'posts_per_page' => 1
-                ) );
 
-                if ( $query->have_posts() ) :
-                    while ( $query->have_posts() ) : $query->the_post();
-                        echo '
+<?php
+    $query = new WP_Query( array(
+        'post_type'      => "post",
+        'posts_per_page' => 1
+    ) );
+
+    if ( $query->have_posts() ) :
+        while ( $query->have_posts() ) : $query->the_post();
+            if ( get_the_post_thumbnail_url() ) {
+                $hero_image = get_the_post_thumbnail_url();
+            }
+            echo '
+                <div class="banner" style="background-image: url(' . $hero_image . ');">
+                    <div class="container news-featured-container">
+                        <div class="news-featured">
                             <h3>' . get_the_title() . '</h3>
                             <p>' . get_the_excerpt() . '</p>
                             <a href="' . get_the_permalink() . '"><button class="btn">Read More</button></a>
-                        ';
-                    endwhile;
-                    wp_reset_postdata();
-                endif;
-            ?>
-        </div>
-    </div>
-</div>
+                        </div>
+                    </div>
+                </div>        
+            ';
+        endwhile;
+        wp_reset_postdata();
+    endif;
+?>
+
 <section class="home-intro no-padding light-grey-bg" id="content-start">
     <div class="container">
         <div class="row">

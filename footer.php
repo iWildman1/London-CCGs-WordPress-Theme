@@ -31,20 +31,15 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="footer-nav">
-                        <li><a href="#">CCG Directorate</a></li>
-                        <li><a href="#">Resources</a></li>
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Directory</a></li>
+                        <li><a href="/sitemap">Sitemap</a></li>
+                        <li><a href="/terms">Terms and Conditions</a></li>
+
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <ul class="footer-nav">
-                        <li><a href="#">Report technical issue</a></li>
-                        <li><a href="#">Complaints and corrections</a></li>
-                        <li><a href="#">Terms & conditions</a></li>
-                        <li><a href="#">Privacy policy</a></li>
-                        <li><a href="#">Cookies policy</a></li>
+                        <li><a href="/accessibility">Accessibility</a></li>
+                        <li><a href="/privacy-cookies">Privacy & Cookies</a></li>
                     </ul>
                 </div>
                 </div>

@@ -56,6 +56,11 @@ button {
 
 .main-body {
 
+  iframe {
+    height: 550px;
+    width: 100%;
+  }
+
   border-right: 1px solid $divider;
 
   .client-row {
@@ -408,3 +413,10 @@ button {
   border: 0;
 }
 
+.filters {
+  display: none !important;
+}
+
+iframe {
+  max-width: 100% !important;
+}
